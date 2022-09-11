@@ -4,10 +4,7 @@
 # https://aka.ms/yaml
 
 trigger:
-- master
-
-pool:
-  vmImage: 'ubuntu-latest'
+- master 
 
 variables:
   BUILD_ID: '$(Build.BuildId)'
