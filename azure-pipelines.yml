@@ -6,6 +6,9 @@
 trigger:
 - master 
 
+pool:
+  vmImage: 'ubuntu-latest'
+
 variables:
   BUILD_ID: '$(Build.BuildId)'
 
@@ -34,3 +37,12 @@ stages:
             pathToPublish: $(Build.ArtifactStagingDirectory)
             artifactName: drop
           displayName: "Publish build artifacts"
+    
+# - stage: 'Deploy'
+#   displayName: 'Deploy the application'
+#   dependsOn: Build
+#   condition: succeeded()
+#   jobs:
+#   - deployment: DeployApp
+#     pool:
+#       vmImage: 'ubuntu-latest'
